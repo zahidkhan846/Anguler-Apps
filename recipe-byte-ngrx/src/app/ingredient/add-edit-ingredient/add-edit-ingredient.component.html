@@ -1,0 +1,40 @@
+<div class="center">
+  <form
+    class="form bg-light w-small"
+    (ngSubmit)="onFormSubmit(ingForm)"
+    #ingForm="ngForm"
+  >
+    <h2 class="title">{{ editMode ? "Edit" : "Add" }} Ingredient</h2>
+    <div class="form-control">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" ngModel required />
+    </div>
+    <div class="form-control">
+      <label for="qty">Quantity</label>
+      <input
+        type="number"
+        name="qty"
+        id="qty"
+        ngModel
+        required
+        pattern="^[1-9]+[0-9]*$"
+      />
+    </div>
+    <div class="btn-control">
+      <button type="button" class="btn btn-danger" (click)="onClearForm()">
+        Clear
+      </button>
+      <button class="btn btn-secondary" type="button" (click)="onGoBack()">
+        Go Back
+      </button>
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!ingForm.valid"
+        [ngClass]="{ disabled: !ingForm.valid }"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

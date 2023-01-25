@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="add-ing">
+    <h2 class="colorful-text">All Ingredients</h2>
+    <a
+      routerLink="/ingredient/add-ing"
+      class="btn btn-light no-shadow capitalize"
+      >Add Ingredient</a
+    >
+  </div>
+  <div class="center">
+    <ul *ngIf="hasIngredients">
+      <app-ingredient-item
+        *ngFor="
+          let ingredient of (ingredients | async).ingredients;
+          let i = index
+        "
+        [ingredient]="ingredient"
+        [ingIndex]="i"
+      ></app-ingredient-item>
+    </ul>
+    <div class="fallback" *ngIf="!hasIngredients">
+      <app-fallback-content
+        fallbackText="Ingredients will appear here..."
+      ></app-fallback-content>
+    </div>
+  </div>
+</div>

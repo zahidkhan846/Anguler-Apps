@@ -1,0 +1,12 @@
+<li>
+  <header>
+    <h3>{{ ingredient.name }}</h3>
+    <h4>
+      Quantity - <span>{{ ingredient.quantity }}</span>
+    </h4>
+  </header>
+  <main>
+    <button class="btn btn-secondary" (click)="onEdit(ingIndex)">Edit</button>
+    <button class="btn btn-danger" (click)="onDelete(ingIndex)">Delete</button>
+  </main>
+</li>

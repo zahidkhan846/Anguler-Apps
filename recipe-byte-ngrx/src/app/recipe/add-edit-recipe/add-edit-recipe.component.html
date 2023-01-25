@@ -1,0 +1,67 @@
+<div class="center">
+  <form class="form" [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+    <h2 class="title colorful-text">
+      {{ editMode ? "Update Recipe" : "Add New Recipe" }}
+    </h2>
+    <div class="form-control">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" formControlName="name" />
+    </div>
+    <div class="form-control">
+      <label for="description">Description</label>
+      <textarea
+        name="description"
+        id="description"
+        rows="5"
+        formControlName="description"
+      ></textarea>
+    </div>
+    <div class="form-control">
+      <label for="imageUrl">Image Url</label>
+      <input
+        type="text"
+        id="imageUrl"
+        name="imageUrl"
+        formControlName="imageUrl"
+      />
+    </div>
+    <div class="form-control">
+      <header>
+        <span>Ingredients</span>
+      </header>
+      <ul formArrayName="ingredients">
+        <li
+          *ngFor="let ingControl of controls; let i = index"
+          [formGroupName]="i"
+        >
+          <input type="text" placeholder="Name" formControlName="name" />
+          <input
+            type="number"
+            placeholder="Quantity"
+            formControlName="quantity"
+          />
+          <app-delete-button
+            (onClick)="onDeleteIngredient(i)"
+          ></app-delete-button>
+        </li>
+      </ul>
+      <footer>
+        <small>Click here to add new ingredient.</small>
+        <app-add-button (onClick)="onAddIngredient()"></app-add-button>
+      </footer>
+    </div>
+    <div class="btn-control">
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">
+        Cancel
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!recipeForm.valid"
+        [ngClass]="{ disabled: !recipeForm.valid }"
+      >
+        {{ editMode ? "Update" : "Add New" }}
+      </button>
+    </div>
+  </form>
+</div>

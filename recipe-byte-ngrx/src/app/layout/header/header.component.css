@@ -1,0 +1,76 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--gradient);
+  color: var(--light-color);
+  padding: 0 2rem;
+  box-shadow: var(--box-shadow);
+  height: 70px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.logo span {
+  color: var(--secondary-color);
+}
+
+.nav-items ul {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-items a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  color: var(--light-color);
+  outline: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ing {
+  padding: 0.75rem 1rem !important;
+}
+
+.nav-items a:hover,
+.nav-items a:active,
+.nav-items a.active {
+  color: var(--dark-color);
+  background: var(--light-secondary);
+}
+
+@media (max-width: 750px) {
+  .navbar {
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    padding: 1rem 0;
+  }
+}
+
+.logout {
+  background: rgb(247, 4, 4);
+  box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.logout:hover {
+  background: var(--danger-color) !important;
+  color: var(--light-color) !important;
+}

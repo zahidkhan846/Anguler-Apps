@@ -1,0 +1,30 @@
+<header class="navbar">
+  <div class="logo">
+    <img src="../../../assets/burger.png" alt="RecipeByte" />
+    <h2>Recipe<span>Byte</span></h2>
+  </div>
+  <nav class="nav-items">
+    <ul>
+      <li>
+        <a routerLink="/recipes" routerLinkActive="active">Recipe</a>
+      </li>
+      <li *ngIf="currentUser">
+        <a routerLink="/add-recipe" routerLinkActive="active">Add Recipe</a>
+      </li>
+      <li>
+        <a class="ing" routerLink="/ingredient" routerLinkActive="active"
+          >Ingredients</a
+        >
+      </li>
+      <li>
+        <a
+          *ngIf="!currentUser"
+          routerLink="/auth/login"
+          routerLinkActive="active"
+          >Login</a
+        >
+        <a class="logout" *ngIf="currentUser" (click)="onLogout()">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</header>

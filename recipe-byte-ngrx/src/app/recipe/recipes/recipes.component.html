@@ -1,0 +1,21 @@
+<div class="container">
+  <section class="home-page">
+    <div>
+      <h2 class="colorful-text">Find your fevorite meal</h2>
+      <ul *ngIf="hasRecipes()">
+        <app-single-recipe
+          *ngFor="let recipe of recipes"
+          [recipe]="recipe"
+        ></app-single-recipe>
+      </ul>
+      <div class="fallback" *ngIf="!hasRecipes()">
+        <app-fallback-content
+          fallbackText="Your Recipes will appear here."
+        ></app-fallback-content>
+      </div>
+    </div>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+</div>

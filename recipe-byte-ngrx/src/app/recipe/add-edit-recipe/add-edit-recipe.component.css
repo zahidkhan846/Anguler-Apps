@@ -1,0 +1,28 @@
+ul {
+  max-height: 37.2px;
+  overflow-y: scroll;
+}
+
+li {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 0.5fr;
+  gap: 0.5rem;
+
+  align-items: center;
+}
+
+header {
+  margin-bottom: 3px;
+}
+
+footer {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+}
+
+small {
+  font-style: italic;
+  color: gray;
+}

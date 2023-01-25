@@ -1,0 +1,49 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+}
+
+.alert-box {
+  position: fixed;
+  top: 30vh;
+  left: 20vw;
+  width: 60vw;
+  background-color: var(--light-color);
+  z-index: 200;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  background-color: var(--dark-primary);
+  color: var(--light-color);
+}
+
+p {
+  padding: 0.5rem 1rem;
+}
+
+.btn-control {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+  background-color: var(--dark-primary);
+}
+
+@media (min-width: 768px) {
+  .alert-box {
+    left: 30vw;
+    width: 40vw;
+  }
+}

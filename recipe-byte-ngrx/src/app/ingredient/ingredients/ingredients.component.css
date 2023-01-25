@@ -1,0 +1,45 @@
+h2 {
+  text-align: center;
+}
+
+ul {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 80.5vh;
+  overflow-y: scroll;
+}
+
+.add-ing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 600px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.btn:hover {
+  background-color: var(--dark-primary);
+  color: var(--light-color);
+}
+
+.fallback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+@media (max-width: 768px) {
+  .add-ing {
+    flex-direction: column;
+    width: 400px;
+    gap: 1rem;
+  }
+
+  ul {
+    height: 62.5vh;
+  }
+}

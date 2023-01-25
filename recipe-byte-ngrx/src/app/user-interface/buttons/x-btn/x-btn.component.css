@@ -1,0 +1,14 @@
+.x-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: rgb(221, 15, 15);
+  transition: transform 500ms ease-in;
+}
+
+.x-btn:hover {
+  transform: rotate(90deg);
+}

@@ -1,0 +1,15 @@
+<section>
+  <h2 class="colorful-text">
+    {{ selectedRecipe.name }}
+  </h2>
+  <img [src]="selectedRecipe.imageUrl" alt="{{ selectedRecipe.name }}" />
+  <h3>About {{ selectedRecipe.name }}</h3>
+  <p>{{ selectedRecipe.description }}</p>
+  <h4>Ingredients Used</h4>
+  <ul>
+    <li *ngFor="let ingredients of selectedRecipe.ingredients">
+      <span class="name">{{ ingredients.name }}</span>
+      <span class="qty">{{ ingredients.quantity }}</span>
+    </li>
+  </ul>
+</section>

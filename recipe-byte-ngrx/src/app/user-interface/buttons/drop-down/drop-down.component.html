@@ -1,0 +1,25 @@
+<div class="btn-container">
+  <button (click)="onShowDropDown()" [ngClass]="{ active: show }">
+    <span>Manage</span>
+    <svg *ngIf="!show" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <polyline
+        points="5 9 12 16 19 9"
+        fill="#111"
+        stroke="#111"
+        stroke-miterlimit="10"
+      />
+    </svg>
+    <svg *ngIf="show" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <polyline
+        points="19 15 12 8 5 15"
+        fill="#111"
+        stroke="#111"
+        stroke-miterlimit="10"
+      />
+    </svg>
+  </button>
+  <ul *ngIf="show">
+    <li (click)="onEditEvent($event)">Edit</li>
+    <li (click)="onRemoveEvent($event)">Remove</li>
+  </ul>
+</div>

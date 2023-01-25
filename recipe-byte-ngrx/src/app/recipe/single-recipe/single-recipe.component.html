@@ -1,0 +1,23 @@
+<li>
+  <header>
+    <h3>{{ recipe.name }}</h3>
+    <app-drop-down
+      (onEdit)="onEdit(recipe.id)"
+      (onRemove)="onRemove(recipe.id)"
+    ></app-drop-down>
+  </header>
+  <main>
+    <p>{{ recipe.description }}</p>
+    <div class="button-control">
+      <a [routerLink]="[recipe.id]" class="btn btn-light capitalize no-shadow"
+        >Know More</a
+      >
+      <button
+        class="btn btn-primary capitalize"
+        (click)="onAddToIngredients(recipe.ingredients)"
+      >
+        Add To Ingredients
+      </button>
+    </div>
+  </main>
+</li>
